@@ -300,48 +300,58 @@ const gridItems: GridItem[] = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <header className="relative px-8 py-16">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <nav className="flex-1">
-            <a href="#" className="text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
+      <header className="relative px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+        <div className="flex flex-col sm:flex-row items-center justify-between max-w-7xl mx-auto gap-4 sm:gap-0">
+          <nav className="flex-1 order-2 sm:order-1">
+            <a href="#" className="text-sm sm:text-base md:text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
               TRABAJOS
             </a>
           </nav>
 
-          <div className="flex-1 flex justify-center">
-            <div className="text-5xl font-bold tracking-tight">LAND®</div>
+          <div className="flex-1 flex justify-center order-1 sm:order-2">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">LAND®</div>
           </div>
 
-          <nav className="flex-1 flex justify-end">
-            <a href="#" className="text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
+          <nav className="flex-1 flex justify-center sm:justify-end order-3">
+            <a href="#" className="text-sm sm:text-base md:text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
               ESTUDIO
             </a>
           </nav>
         </div>
       </header>
 
-      <main className="px-8 pb-8">
-        <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto">
+      <main className="px-4 sm:px-6 md:px-8 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 max-w-7xl mx-auto">
           {gridItems.map((item) => {
             const getColSpanClass = (colSpan: number) => {
               switch (colSpan) {
                 case 3:
-                  return "col-span-3";
+                  return "col-span-1 sm:col-span-1 lg:col-span-3";
                 case 6:
-                  return "col-span-6";
+                  return "col-span-1 sm:col-span-2 lg:col-span-6";
                 default:
-                  return "col-span-3";
+                  return "col-span-1 sm:col-span-1 lg:col-span-3";
               }
             };
 
             const getRowSpanClass = (rowSpan?: number) => {
-              return rowSpan === 2 ? "row-span-2" : "";
+              return rowSpan === 2 ? "lg:row-span-2" : "";
+            };
+
+            const getHeightClass = (height: string, rowSpan?: number) => {
+              if (rowSpan === 2) {
+                // Cards grandes
+                return "h-64 sm:h-80 lg:h-[33rem]";
+              } else {
+                // Cards normales
+                return "h-64 sm:h-72 lg:h-64";
+              }
             };
 
             return (
               <div
                 key={item.id}
-                className={`${getColSpanClass(item.colSpan)} ${getRowSpanClass(item.rowSpan)} ${item.height}  overflow-hidden relative group cursor-pointer transition-transform hover:scale-[1.02]`}
+                className={`${getColSpanClass(item.colSpan)} ${getRowSpanClass(item.rowSpan)} ${getHeightClass(item.height, item.rowSpan)} rounded-2xl overflow-hidden relative group cursor-pointer transition-transform hover:scale-[1.02]`}
               >
                 <Image
                   src={item.image}
