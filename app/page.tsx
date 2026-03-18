@@ -303,17 +303,25 @@ export default function Home() {
       <header className="relative px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
         <div className="flex flex-col sm:flex-row items-center justify-between max-w-7xl mx-auto gap-4 sm:gap-0">
           <nav className="flex-1 order-2 sm:order-1">
-            <a href="#" className="text-sm sm:text-base md:text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
+            <a
+              href="#"
+              className="text-sm sm:text-base md:text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium"
+            >
               TRABAJOS
             </a>
           </nav>
 
           <div className="flex-1 flex justify-center order-1 sm:order-2">
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">LAND®</div>
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+              LAND®
+            </div>
           </div>
 
           <nav className="flex-1 flex justify-center sm:justify-end order-3">
-            <a href="#" className="text-sm sm:text-base md:text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
+            <a
+              href="#"
+              className="text-sm sm:text-base md:text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium"
+            >
               ESTUDIO
             </a>
           </nav>
@@ -351,7 +359,7 @@ export default function Home() {
             return (
               <div
                 key={item.id}
-                className={`${getColSpanClass(item.colSpan)} ${getRowSpanClass(item.rowSpan)} ${getHeightClass(item.height, item.rowSpan)} rounded-2xl overflow-hidden relative group cursor-pointer transition-transform hover:scale-[1.02]`}
+                className={`${getColSpanClass(item.colSpan)} ${getRowSpanClass(item.rowSpan)} ${getHeightClass(item.height, item.rowSpan)}  overflow-hidden relative group cursor-pointer transition-transform hover:scale-[1.02]`}
               >
                 <Image
                   src={item.image}
