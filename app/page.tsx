@@ -50,7 +50,7 @@ const gridItems: GridItem[] = [
     description: "Card grande 2x2",
     colSpan: 6,
     rowSpan: 2,
-    height: "h-96",
+    height: "h-[24.5rem]",
   },
   {
     id: 6,
@@ -113,32 +113,32 @@ const gridItems: GridItem[] = [
     height: "h-48",
   },
 
-  // Quinta fila: Otro card grande 2x2 + 2 cards normales
+  // Quinta fila: 2 cards normales + card grande 2x2 al lado derecho
   {
     id: 14,
-    image: "https://placehold.co/600x600/7c3aed/ffffff?text=Big+Card+2",
-    title: "Proyecto Principal 2",
-    description: "Segundo card grande",
-    colSpan: 6,
-    rowSpan: 2,
-    height: "h-96",
+    image: "https://placehold.co/400x300/059669/ffffff?text=Card+14",
+    title: "Proyecto 14",
+    colSpan: 3,
+    height: "h-48",
   },
   {
     id: 15,
-    image: "https://placehold.co/400x300/059669/ffffff?text=Card+15",
+    image: "https://placehold.co/400x300/dc2626/ffffff?text=Card+15",
     title: "Proyecto 15",
     colSpan: 3,
     height: "h-48",
   },
   {
     id: 16,
-    image: "https://placehold.co/400x300/dc2626/ffffff?text=Card+16",
-    title: "Proyecto 16",
-    colSpan: 3,
-    height: "h-48",
+    image: "https://placehold.co/600x600/7c3aed/ffffff?text=Big+Card+2",
+    title: "Proyecto Principal 2",
+    description: "Segundo card grande (derecha)",
+    colSpan: 6,
+    rowSpan: 2,
+    height: "h-[24.5rem]",
   },
 
-  // Sexta fila: 2 cards normales (completan el lado derecho del segundo card grande)
+  // Sexta fila: 2 cards normales más (completan el lado izquierdo del segundo card grande)
   {
     id: 17,
     image: "https://placehold.co/400x300/0891b2/ffffff?text=Card+17",
@@ -150,6 +150,148 @@ const gridItems: GridItem[] = [
     id: 18,
     image: "https://placehold.co/400x300/be123c/ffffff?text=Card+18",
     title: "Proyecto 18",
+    colSpan: 3,
+    height: "h-48",
+  },
+
+  // Séptima fila: 4 cards normales (tercer ciclo)
+  {
+    id: 19,
+    image: "https://placehold.co/400x300/1e40af/ffffff?text=Card+19",
+    title: "Proyecto 19",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 20,
+    image: "https://placehold.co/400x300/15803d/ffffff?text=Card+20",
+    title: "Proyecto 20",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 21,
+    image: "https://placehold.co/400x300/a21caf/ffffff?text=Card+21",
+    title: "Proyecto 21",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 22,
+    image: "https://placehold.co/400x300/ea580c/ffffff?text=Card+22",
+    title: "Proyecto 22",
+    colSpan: 3,
+    height: "h-48",
+  },
+
+  // Octava fila: Tercer card grande (lado izquierdo) + 2 cards normales
+  {
+    id: 23,
+    image: "https://placehold.co/600x600/0f172a/ffffff?text=Big+Card+3",
+    title: "Proyecto Principal 3",
+    description: "Tercer card grande (izquierda)",
+    colSpan: 6,
+    rowSpan: 2,
+    height: "h-[24.5rem]",
+  },
+  {
+    id: 24,
+    image: "https://placehold.co/400x300/7c2d12/ffffff?text=Card+24",
+    title: "Proyecto 24",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 25,
+    image: "https://placehold.co/400x300/581c87/ffffff?text=Card+25",
+    title: "Proyecto 25",
+    colSpan: 3,
+    height: "h-48",
+  },
+
+  // Novena fila: 2 cards normales (completan el lado derecho del tercer card grande)
+  {
+    id: 26,
+    image: "https://placehold.co/400x300/166534/ffffff?text=Card+26",
+    title: "Proyecto 26",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 27,
+    image: "https://placehold.co/400x300/991b1b/ffffff?text=Card+27",
+    title: "Proyecto 27",
+    colSpan: 3,
+    height: "h-48",
+  },
+
+  // Décima fila: 4 cards normales (cuarto ciclo)
+  {
+    id: 28,
+    image: "https://placehold.co/400x300/0369a1/ffffff?text=Card+28",
+    title: "Proyecto 28",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 29,
+    image: "https://placehold.co/400x300/7e22ce/ffffff?text=Card+29",
+    title: "Proyecto 29",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 30,
+    image: "https://placehold.co/400x300/059669/ffffff?text=Card+30",
+    title: "Proyecto 30",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 31,
+    image: "https://placehold.co/400x300/c2410c/ffffff?text=Card+31",
+    title: "Proyecto 31",
+    colSpan: 3,
+    height: "h-48",
+  },
+
+  // Undécima fila: 2 cards normales + cuarto card grande (lado derecho)
+  {
+    id: 32,
+    image: "https://placehold.co/400x300/1f2937/ffffff?text=Card+32",
+    title: "Proyecto 32",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 33,
+    image: "https://placehold.co/400x300/4c1d95/ffffff?text=Card+33",
+    title: "Proyecto 33",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 34,
+    image: "https://placehold.co/600x600/b91c1c/ffffff?text=Big+Card+4",
+    title: "Proyecto Principal 4",
+    description: "Cuarto card grande (derecha)",
+    colSpan: 6,
+    rowSpan: 2,
+    height: "h-[24.5rem]",
+  },
+
+  // Duodécima fila: 2 cards normales más (completan el lado izquierdo del cuarto card grande)
+  {
+    id: 35,
+    image: "https://placehold.co/400x300/065f46/ffffff?text=Card+35",
+    title: "Proyecto 35",
+    colSpan: 3,
+    height: "h-48",
+  },
+  {
+    id: 36,
+    image: "https://placehold.co/400x300/9333ea/ffffff?text=Card+36",
+    title: "Proyecto 36",
     colSpan: 3,
     height: "h-48",
   },
