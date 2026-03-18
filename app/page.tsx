@@ -50,7 +50,7 @@ const gridItems: GridItem[] = [
     description: "Card grande 2x2",
     colSpan: 6,
     rowSpan: 2,
-    height: "h-[24.5rem]",
+    height: "h-[25rem]",
   },
   {
     id: 6,
@@ -135,7 +135,7 @@ const gridItems: GridItem[] = [
     description: "Segundo card grande (derecha)",
     colSpan: 6,
     rowSpan: 2,
-    height: "h-[24.5rem]",
+    height: "h-[25rem]",
   },
 
   // Sexta fila: 2 cards normales más (completan el lado izquierdo del segundo card grande)
@@ -192,7 +192,7 @@ const gridItems: GridItem[] = [
     description: "Tercer card grande (izquierda)",
     colSpan: 6,
     rowSpan: 2,
-    height: "h-[24.5rem]",
+    height: "h-[25rem]",
   },
   {
     id: 24,
@@ -277,7 +277,7 @@ const gridItems: GridItem[] = [
     description: "Cuarto card grande (derecha)",
     colSpan: 6,
     rowSpan: 2,
-    height: "h-[24.5rem]",
+    height: "h-[25rem]",
   },
 
   // Duodécima fila: 2 cards normales más (completan el lado izquierdo del cuarto card grande)
@@ -300,28 +300,37 @@ const gridItems: GridItem[] = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <header className="flex items-center justify-between px-8 py-6">
-        <div className="flex items-center space-x-2">
-          <div className="text-2xl font-bold">LAND®</div>
+      <header className="relative px-8 py-16">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <nav className="flex-1">
+            <a href="#" className="text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
+              TRABAJOS
+            </a>
+          </nav>
+
+          <div className="flex-1 flex justify-center">
+            <div className="text-5xl font-bold tracking-tight">LAND®</div>
+          </div>
+
+          <nav className="flex-1 flex justify-end">
+            <a href="#" className="text-lg uppercase tracking-wide hover:opacity-70 transition-opacity font-medium">
+              ESTUDIO
+            </a>
+          </nav>
         </div>
-        <nav className="flex items-center space-x-8">
-          <a href="#" className="text-sm uppercase tracking-wide hover:opacity-70 transition-opacity">
-            TRABAJOS
-          </a>
-          <a href="#" className="text-sm uppercase tracking-wide hover:opacity-70 transition-opacity">
-            ESTUDIO
-          </a>
-        </nav>
       </header>
 
       <main className="px-8 pb-8">
         <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto">
           {gridItems.map((item) => {
             const getColSpanClass = (colSpan: number) => {
-              switch(colSpan) {
-                case 3: return "col-span-3";
-                case 6: return "col-span-6";
-                default: return "col-span-3";
+              switch (colSpan) {
+                case 3:
+                  return "col-span-3";
+                case 6:
+                  return "col-span-6";
+                default:
+                  return "col-span-3";
               }
             };
 
@@ -332,27 +341,29 @@ export default function Home() {
             return (
               <div
                 key={item.id}
-                className={`${getColSpanClass(item.colSpan)} ${getRowSpanClass(item.rowSpan)} ${item.height} rounded-2xl overflow-hidden relative group cursor-pointer transition-transform hover:scale-[1.02]`}
+                className={`${getColSpanClass(item.colSpan)} ${getRowSpanClass(item.rowSpan)} ${item.height}  overflow-hidden relative group cursor-pointer transition-transform hover:scale-[1.02]`}
               >
-              <Image
-                src={item.image}
-                alt={item.title || `Image ${item.id}`}
-                fill
-                className="object-cover"
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Image
+                  src={item.image}
+                  alt={item.title || `Image ${item.id}`}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              {(item.title || item.description) && (
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  {item.title && (
-                    <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-                  )}
-                  {item.description && (
-                    <p className="text-sm text-white/80">{item.description}</p>
-                  )}
-                </div>
-              )}
+                {(item.title || item.description) && (
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    {item.title && (
+                      <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+                    )}
+                    {item.description && (
+                      <p className="text-sm text-white/80">
+                        {item.description}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
             );
           })}
